@@ -1,7 +1,7 @@
 import os
 import json
 import argparse
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Any
 from openai import OpenAI
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -14,6 +14,8 @@ REQUIRED_TOPICS = [
     'addresses',
     'national_ids'
 ]
+
+NUM_WORKERS=20
 
 
 def create_client() -> OpenAI:
@@ -65,7 +67,8 @@ def get_response(text: str, client: OpenAI, model_path: str, system_prompt: str)
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": text}
         ],
-        response_format={'type': "json_object"}
+        response_format={'type': "json_object"},
+        timeout=30
     )
     return completion.choices[0].message.content
 
@@ -116,12 +119,18 @@ def merge_llm_responses(llm_responses_eval: List[Dict], required_topics: List[st
     Merges all parsed LLM responses into a single dictionary grouped by topic.
     """
     merged = {topic: [] for topic in required_topics}
-    for response in tqdm(llm_responses_eval):
+    for response in llm_responses_eval:
         for topic in required_topics:
             try:
                 merged[topic].extend(response.get(topic, []))
             except Exception:
                 print("Error merging topic from batch. Skipping.")
+    
+    # making sure duplicate values are removed
+    for topic in merged:
+      values = merged[topic]
+      merged[topic] = list(set(values))
+
     return merged
 
 
@@ -143,7 +152,7 @@ def get_llm_outputs_and_save_results(
             file_path = input_entry['file_path']
 
             llm_responses = get_response_multithread(
-                batches, client, model_path, system_prompt
+                batches, client, model_path, system_prompt, NUM_WORKERS
             )
             parsed = eval_llm_responses(llm_responses)
             merged = merge_llm_responses(parsed, REQUIRED_TOPICS)

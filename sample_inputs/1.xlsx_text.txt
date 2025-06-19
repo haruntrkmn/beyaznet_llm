@@ -1,0 +1,31 @@
+Fortinet vs Cisco
+	Madde	Lisans Detayı	FortiCare- Standard/ Default	Cisco
+	1	Sınırsız SD-WAN Kapasitesi	Dahil	Ücretli - Band Genişliği Toplamına göre  ve kullanılan özelliğe göre EK maliyetler
+	2	Yüksek kapasiteli uç cihaz	250 Mbps NGFW, 650 Mbps AppCtrl desteği	75-100 Mbps kapasite, güvenlik aktifleştirildiğinde aşırı kapasite düşüşü ve gecikme eklenmesi
+	3	Routing ve Güvenlik Bileşenleri İşletim Sistemi	Tek OS ve aynı OS içerisinde OT dahil tüm güvenlik öellikleri desteklenir.	Farklı OS. Güvenlik için ayrı Container açılır ve Servis Zinciri tanımlanır. Düşük performans, ek GECİKME
+	4	Application Control	Dahil	Dahil
+	5	3G/ LTE Performansı	Extender ile 100 m. öteye kurulum imkanı, yüksel DL/ UL Performansı	Düşük Performans, dahili ve uzatılamayan Modül
+	6	Merkezi Yönetim ve Analitik bileşenleri Disaster olursa üretim ortamına etkisi	Etkisi YOK, tüm sistem süresiz olarak çalışmaya devam eder	Default 24 saat içinde erişim geri gelmez ise tüm Network DOWN olur
+	7	Merkezi Yönetim ve Analitik bileşenleri ve Cihaz Firmware-OS Zaafiyetleri	YOK - Olduğu durumda en hızlı yama ve güncelleme sağlayan üretici	Halen çözülmemiş ve çözüm tarihi net olmayan KRİTİK Zaafiyetler mevcut ve çözüm SLA süreleri çok yüksek ya da belli değil
+	8	SD/ Branch - LAN/ WLAN Management	Dahil	Ayrı Yönetim, ayrı çözüm. Entegre değil
+	9	IPSEC VPN	Dahil	Dahil
+	10	Trusted SaaS Servisleri için Local-Breakout (Zoom, Windows Update vb.)	Dahil	Dahil
+	11	User Identity & Group Based Policies	Dahil	Roadmap ve En üst Lisans Paketi (Premier Gerekli)
+	12	Device Identification - Classification	Dahil	YOK
+	13	DoS Atak Koruması	Dahil	YOK
+	14	Stateful Firewall (L2-L7)	Dahil	Dahil
+	15	Threat Intelligence Subscription	Dahil	En üst Lisans Paketi (Premier Gerekli). Düşük Performans saha referansı yok
+	16	Custom External Threat Feeds (IP, Domain, URL, Hash) - Ör: Yedaş Threat Feed	Dahil	YOK
+	17	File Filtering	Dahil	En üst Lisans Paketi (Premier Gerekli)
+	18	Web Application Firewall	Dahil	YOK
+	19	TLS/SSL Inspection	Dahil	Düşük Performans, Sahada uygulayabilen YOK.
+	20	SSL-VPN	Dahil	YOK
+	21	Native 2FA Support	Dahil	YOK
+	22	24x7 Support (Web, Telephone, Chat)	Dahil	Dahil
+	23	Botnet & C2C Protection (IP, Domain, URL)	IP, URL Dahil	Lisans
+	24	Hardware Support (RMA)	Dahil	Dahil
+	25	OT/ Endüstriyel Kontrol İmzaları ve Güvenliği desteği	OT Lisans ile	YOK
+	26	IT ve OT Referans	Çok Fazla, en yaygın kullanılan üretici	IT Limitli (100 uç ve üstü referans sayısı limitli, bknz. Gartner Raporları), OT YOK (Güvenlik aktif olarak)
+
+
+

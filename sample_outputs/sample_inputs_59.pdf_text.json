@@ -1,0 +1,33 @@
+{
+    "person_names": [
+        "Maj.Ahmet AKÇA",
+        "Col. Tamas KENDER",
+        "Maj. Tylor BOTT",
+        "Ms Demet UZUNOĞLU",
+        "Maj. Nevzat TEKNECİ",
+        "Ms Sultan ERDOĞAN YILDIZ",
+        "LTC Uwe BERGER",
+        "Col. Suat GÖÇEN",
+        "Col. Marcel-Horia ARAMÄ",
+        "Capt.(N) Alper AŞKIN"
+    ],
+    "email_addresses": [
+        "marcelhoria.arama@coedat.nato.int",
+        "sultan.erdoganyildiz@coedat.nato.int",
+        "suat.gocen@coedat.nato.int",
+        "alper.askin@coedat.nato.int",
+        "uwe.berger@coedat.nato.int",
+        "tylor.bott@coedat.nato.int",
+        "ahmet.akca@coedat.nato.int",
+        "nevzat.tekneci@coedat.nato.int",
+        "tamas.kender@coedat.nato.int",
+        "demet.uzunoglu@coedat.nato.int"
+    ],
+    "phone_numbers": [
+        "+90-312 425 82 15"
+    ],
+    "addresses": [
+        "Devlet Mah. ‹nönü Bul. Süleyman Emin Cad. No: 65, 06420 Çankaya/ANKARA"
+    ],
+    "national_ids": []
+}
