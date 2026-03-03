@@ -12,7 +12,8 @@ REQUIRED_TOPICS = [
     'email_addresses',
     'phone_numbers',
     'addresses',
-    'national_ids'
+    'national_ids',
+    'source_code'
 ]
 
 NUM_WORKERS=20
@@ -51,7 +52,7 @@ def read_system_prompt_and_text_inputs(system_prompt_path: str, input_path: str)
 
     all_inputs = [{
         'file_path': path,
-        'batches': read_txt_into_batches(path, batch_size=4000)
+        'batches': read_txt_into_batches(path, batch_size=1000)
     } for path in input_paths if path.strip()]
 
     return system_prompt, all_inputs
